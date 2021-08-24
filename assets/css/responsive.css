@@ -99,5 +99,7 @@
     .modal{
         padding: 0 8px;
     }
-
+    #footer .socials-list{
+        font-size: 24px;       
+    }
 }
