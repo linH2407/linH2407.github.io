@@ -10,18 +10,20 @@
     .modal{
         padding: 0 16px;
     }
+    #footer .socials-list{
+        font-size: 48px;       
+    }
 }
 @media (max-width: 1023px){
     .btn,
     .btn.mt-16{
         padding: 15px 16px;
+        font-size: 18px;
     }
     .contact-form .form-control{
         padding: 16px;
     }
-    #footer .socials-list{
-        font-size: 48px;       
-    }
+    
     #footer .socials-list a{
         margin: 0 8px;
     }
