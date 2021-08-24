@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Band.</title>
+    <title>Band</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="icon" href="./assets/img/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div id="main">
@@ -18,7 +19,7 @@
                <li><a href="#tour">Tour</a></li>
                <li><a href="#contact">Contact</a></li>
                <li>
-                   <a href="">
+                   <a href="#">
                        More
                        <i class="fa fa-angle-down"></i>
                    </a>
@@ -31,6 +32,9 @@
            </ul>
            <div id="search">
                 <i class="fa fa-search"></i>
+           </div>
+           <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="fa fa-bars" aria-hidden="true"></i>
            </div>
         </div>
         <div id="slider">
@@ -60,7 +64,6 @@
                         <div class="member-name">Name</div>
                         <img src="./assets/img/bandmember.jpg" alt="Name" class="member-img">
                     </div>
-                    <div class="clear"></div>
                 </div>
             </div>
             <div id="tour" class="tour-section">
@@ -79,7 +82,7 @@
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="btn js-buy-ticket">Buy Tickets</button>
+                                <button class="btn js-buy-ticket send-btn">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place-item">
@@ -88,7 +91,7 @@
                                 <h3 class="place-heading">Paris</h3>
                                 <p class="place-time">Sat 28 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="btn js-buy-ticket">Buy Tickets</button>
+                                <button class="btn js-buy-ticket send-btn">Buy Tickets</button>
                             </div>
                         </div>
                         <div class="place-item">
@@ -97,10 +100,10 @@
                                 <h3 class="place-heading">San Francisco</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button class="btn js-buy-ticket">Buy Tickets</button>
+                                <button class="btn js-buy-ticket send-btn">Buy Tickets</button>
                             </div>
                         </div>
-                        <div class="clear"></div>
+                       
                     </div>
                 </div>  
             </div>
@@ -111,16 +114,16 @@
                 <div class="row contact-content">
                     <div class="col col-half contact-info">
                         <p><i class="fa fa-map-marker"></i>Chicago, US</p>
-                        <p><i class="fa fa-mobile"></i>Phone: +00 151515</p>
-                        <p><i class="fa fa-envelope"></i>Email: mail@mail.com</p>
+                        <p><i class="fa fa-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
+                        <p><i class="fa fa-envelope"></i>Email: <a href="mailto:mail@gmail.com">mail@mail.com</a></p>
                     </div>
                     <div class="col col-half contact-form">
                         <form action="">
                             <div class="row">
-                                <div class="col col-half">
+                                <div class="col col-half input-name">
                                     <input type="text" required name="" id="" class="form-control" placeholder="Name">
                                 </div>
-                                <div class="col col-half">
+                                <div class="col col-half input-email">
                                     <input type="email" required name="" id="" class="form-control" placeholder="Email">
                                 </div>
                             </div>
@@ -129,7 +132,7 @@
                                     <input type="text" required name="" id="" class="form-control" placeholder="Message">
                                 </div>
                             </div>
-                            <input class="btn mt-16" type="submit" value="SEND">
+                            <input class="btn mt-16 send-btn" type="submit" value="SEND">
                         </form>
                     </div>
                 </div>
@@ -203,6 +206,35 @@
         modalContainer.addEventListener('click', function(even){
             even.stopPropagation()
         })
+    </script>
+    <script>
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu'); 
+        var headerHeight = header.clientHeight;
+        mobileMenu.onclick = function() {
+            var isClose = header.clientHeight === headerHeight;
+            if (isClose) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for (var i = 0; i < menuItems.length ;i++){
+            var menuItem = menuItems[i];
+            menuItem.onclick = function(event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+
+                if (isParentMenu){
+                    event.preventDefault();
+
+                } else {
+                    header.style.height = null;
+                    
+                }
+            }
+        }
     </script>
 </body>
 </html>

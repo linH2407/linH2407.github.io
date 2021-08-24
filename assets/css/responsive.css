@@ -1,0 +1,101 @@
+@media (min-width: 1024px){
+    #header .mobile-menu-btn{
+        display: none;
+    }
+}
+@media (min-width: 740px) and (max-width: 1024px){
+    #header .mobile-menu-btn{
+        display: none;
+    }
+    .modal{
+        padding: 0 16px;
+    }
+}
+@media (max-width: 1023px){
+    .btn,
+    .btn.mt-16{
+        padding: 15px 16px;
+    }
+    .contact-form .form-control{
+        padding: 16px;
+    }
+    #footer .socials-list{
+        font-size: 48px;       
+    }
+    #footer .socials-list a{
+        margin: 0 8px;
+    }
+    #footer .copy a{
+        padding: 12px 0;
+        display: inline-block;
+    }
+    .contact-info{
+        font-size: 18px;
+        line-height: 2.0;
+    }
+}
+@media (max-width: 740px){
+    #header{
+        overflow: hidden;
+    }
+    #nav > li{
+        display: block;
+    }
+    #nav > li:first-child{
+        display: inline-block;
+    }
+    #nav .subnav{
+        position: initial;
+        background-color: #333;
+    }
+    #nav .subnav a{
+        color: white;
+        padding: 5px 40px;
+    }
+    #nav li a{
+        padding: 1px 24px;
+    }
+    #nav{
+        display: block;
+    }
+    #header #search{
+        display: none;
+    }
+    #content .member-item{
+        width: 100%;
+        margin-top: 30px;
+    }
+    #content .about-text{
+        margin-bottom: -16px;
+    }
+    .place-item{
+        width: 100%;
+        padding-top: 16px;
+    }
+    .places-list{
+        margin-top: 16px;
+    }
+    #slider .text-content{
+        display: none;
+    }
+    .section-heading{
+        padding-top: 10px;
+    }
+    .send-btn,
+    .input-name,
+    .input-email,
+    .contact-info,
+    .contact-form{
+        width: 100%;
+    }
+    .input-name{
+        margin-bottom: 8px;
+    }
+    .contact-info{
+        margin-bottom: 24px;
+    }
+    .modal{
+        padding: 0 8px;
+    }
+
+}
